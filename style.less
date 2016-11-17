@@ -11,16 +11,30 @@
      height: 80px;
  }
 
+.myByline {
+    .column(2);
+    text-align: center;
+}
+
+.myByline img {
+    display: block;
+    margin: auto;
+}
+
  .site-logo-text,
  .navbar2,
  .profile {
-     float: left;
-     width: 30%;
+     .column(6);
+
+ }
+
+ .profile {
+     width: 10%;
  }
 
  .site-logo-text {
      font-size: 2em;
-
+     .column(3);
      a {
          text-decoration: none;
          color: #222;
@@ -76,19 +90,19 @@
 
  @media screen and (max-width: 900px) {
     .site-logo-text {
-        width: 40%;
+        width: 30%;
     }
 
     .navbar2 {
-        width: 50%;
+        width: 65%;
     }
 
     .profile {
-        width: 10%;
+        width: 5%;
     }
 }
 
-@media screen and (max-width: 560px) {
+@media screen and (max-width: 650px) {
 
    .navbar2 {
        display: none;
@@ -96,6 +110,10 @@
 
    .site-logo-text {
        width: 90%;
+   }
+
+   .profile {
+       position: fixed;
    }
 
 }
@@ -115,5 +133,4 @@
    .footer-column {
        width: 100%;
    }
-
 }
