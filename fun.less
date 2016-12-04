@@ -1,0 +1,172 @@
+/**
+* Anax Flat theme.
+*/
+@import url(modules.less);
+@import url(typography-font-families.less);
+
+/** --------------------------------------------------------------
+ * Header
+ */
+
+ @bgColor: #E0FF31;
+ @textColor: #000;
+ @color1: #8F43FF;
+ @color2: #FF3176;
+
+ @fontFamilyHeadings: @fontFamilyGaramond;
+ @fontFamilyBody: @fontFamilyArial;
+ @fontFamilyCode:;
+
+ @keyframes anim {
+    0%   {background-color: @bgColor;}
+    50%  {background-color: @color1;}
+    100% {background-color: @color2;}
+}
+
+html {
+    background-color: @bgColor;
+    animation-name: anim;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    color: @textColor;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6, {
+    color: @color2;
+}
+
+ .site-header {
+     height: 80px;
+ }
+
+.myByline {
+    .column(2);
+    text-align: center;
+}
+
+.myByline img {
+    display: block;
+    margin: auto;
+}
+
+ .site-logo-text,
+ .profile {
+     .column(3);
+ }
+
+.navbar2,{
+     .column(7);
+ }
+
+ .profile {
+ }
+
+ .site-logo-text {
+     font-size: 2em;
+    //  .column(3);
+     a {
+         text-decoration: none;
+         color: #222;
+     }
+ }
+
+
+ /** --------------------------------------------------------------
+  * Navbar main
+  */
+
+.rm-desktop li {
+    text-align: center;
+    //background-color: #eee;
+}
+
+@navbarItemBgColor: @color1;
+
+
+/** --------------------------------------------------------------
+ * Navbar max
+ */
+
+.rm-max .rm-small .rm-button {
+    //font-size: 2em;
+}
+
+@maxButtonFontSize: 2em;
+
+
+/** --------------------------------------------------------------
+ *  Logo images
+ */
+.logo-1 {
+    position: absolute;
+    top: 70px;
+    left: -140px;
+}
+
+.site-logo-text-icon {
+    img {
+        vertical-align: bottom;
+    }
+}
+
+
+/** --------------------------------------------------------------
+ * Responsive Design.
+ */
+
+ img {
+     max-width: 100%;
+ }
+
+ @media screen and (max-width: 900px) {
+    .site-logo-text {
+        width: 30%;
+    }
+
+    .navbar2 {
+        width: 65%;
+    }
+
+    .profile {
+        width: 5%;
+    }
+}
+
+@media screen and (max-width: 650px) {
+
+   .navbar2 {
+       display: none;
+   }
+
+   .site-logo-text {
+       width: 90%;
+   }
+
+   .profile {
+       position: fixed;
+   }
+
+}
+
+@media screen and (max-width: 750px) {
+
+   .sidebar {
+       width: 100%;
+   }
+
+}
+
+
+
+@media screen and (max-width: 700px) {
+
+   .footer-column {
+       width: 100%;
+   }
+}
