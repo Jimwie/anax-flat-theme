@@ -8,35 +8,102 @@
  * Header
  */
 
- @bgColor: #fff;
+ @bgColor: #FFF;
  @textColor: #000;
- @color1: #e0e2db;
- @color2: #5f6062;
+ @color1: #D6D8DD;
+ @color2: #8E9AB4;
+ @trans: hsla(0, 100%, 100%, 0);
 
- @fontFamilyHeadings: @fontFamilyGaramond;
- @fontFamilyBody: @fontFamilyArial;
- @fontFamilyCode:
+ @fontFamilyHeadings: @fontFamilyCinzel;
+ @fontFamilyBody: @fontFamilyJosefinSans;
 
 html {
     background-color: @bgColor;
     color: @textColor;
 }
 
-body {
+.flash-wrap {
+    background-color: @bgColor;
+    background: radial-gradient(@trans, @bgColor);
+}
+
+.flash-wrap img {
+    position: relative;;
+    z-index: -200;
+}
+
+.hiptext {
+    margin: auto;
+    text-align: center;
+    padding: 30px;
+    width: 80%;
+}
+
+.hipster {
+    margin: auto;
+    clear: both;
+    border: none;
+    -webkit-transition: box-shadow 0.3s ease-in-out 0s;
+    -moz-transition: box-shadow 0.3s ease-in-out 0s;
+    -o-transition: box-shadow 0.3s ease-in-out 0s;
+    -ms-transition: box-shadow 0.3s ease-in-out 0s;
+    transition: box-shadow 0.3s ease-in-out 0s;
+}
+
+
+.hipster:hover {
+    -webkit-box-shadow: 0px 42px 101px 0px rgba(142,154,180,1);
+    -moz-box-shadow: 0px 42px 101px 0px rgba(142,154,180,1);
+    box-shadow: 0px 42px 101px 0px rgba(142,154,180,1);
+}
+
+.hipster a:hover {
 
 }
 
-h1,
+
+.row {
+    text-align: center;
+    margin: auto;
+}
+
+.main {
+    margin: auto;
+    float: none;
+}
+
+.article blockquote {
+    width: 40%;
+    font-style: italic;
+    font-weight: bold;
+    margin: auto;
+    -webkit-transition: box-shadow 0.3s ease-in-out 0s;
+    -moz-transition: box-shadow 0.3s ease-in-out 0s;
+    -o-transition: box-shadow 0.3s ease-in-out 0s;
+    -ms-transition: box-shadow 0.3s ease-in-out 0s;
+    transition: box-shadow 0.3s ease-in-out 0s;
+}
+
+.article blockquote:hover {
+    -webkit-box-shadow: 0px 14px 59px 0px rgba(142,154,180,1);
+    -moz-box-shadow: 0px 14px 59px 0px rgba(142,154,180,1);
+    box-shadow: 0px 14px 59px 0px rgba(142,154,180,1);
+}
+
+
+//h1,
 h2,
 h3,
 h4,
 h5,
 h6, {
-    color: @color2;
+    color: @textColor;
+    text-decoration: underline;
 }
 
  .site-header {
      height: 80px;
+     width: 100%;
  }
 
 .myByline {
@@ -54,30 +121,72 @@ h6, {
      .column(3);
  }
 
-.navbar2,{
-     .column(7);
+.navbar2 {
+     clear: both;
+     margin: auto;
+     padding-bottom: 5px;
  }
 
  .profile {
  }
 
- .site-logo-text {
-     font-size: 2em;
-    //  .column(3);
-     a {
-         text-decoration: none;
-         color: #222;
+ @keyframes spin {
+     from {
+         transform: rotate(0deg);
+     } to {
+         transform: rotate(360deg);
      }
  }
 
+ .site-logo-text {
+     font-size: 2em;
+     width: 100%;
+     margin: auto;
+     padding: 5px;
+     animation-name: spin;
+     animation-duration: 4000ms;
+     animation-iteration-count: infinite;
+     animation-timing-function: linear;
+    //  .column(3);
+     a {
+         text-decoration: none;
+         color: @textColor;
+         clear: both;
+         font-size: 0px;
+     }
+ }
+
+ .footer-column-x {
+     float: none;
+ }
 
  /** --------------------------------------------------------------
   * Navbar main
   */
 
+  @keyframes anim {
+      from {background-color: @bgColor;}
+      to {background-color: @color1;}
+  }
+  @keyframes anim2 {
+      from {background-color: @color1;}
+      to {background-color: @bgColor;}
+  }
+
 .rm-desktop li {
     text-align: center;
-    //background-color: #eee;
+    border: 1px solid @color2;
+}
+
+.rm-desktop a {
+    padding: 7px;
+    animation-name: anim;
+    animation-duration: 1s;
+}
+
+.rm-desktop a:hover{
+    animation-name: anim2;
+    animation-duration: 1s;
 }
 
 @navbarItemBgColor: @color1;
@@ -162,5 +271,22 @@ h6, {
 
    .footer-column {
        width: 100%;
+   }
+}
+
+@media screen and (max-width: 400px) {
+
+   .hiptext {
+       -webkit-column-count: 1; /* Chrome, Safari, Opera */
+       -moz-column-count: 1; /* Firefox */
+       column-count: 1;
+       column-width: 100%;
+   }
+
+   .footer {
+       -webkit-column-count: 1; /* Chrome, Safari, Opera */
+       -moz-column-count: 1; /* Firefox */
+       column-count: 1;
+       column-width: 100%;
    }
 }

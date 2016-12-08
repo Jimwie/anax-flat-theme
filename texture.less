@@ -8,36 +8,22 @@
  * Header
  */
 
- @bgColor: #FFFEF6;
- @textColor: #272622;
- @color1: #FFFCEC;
- @color2: #E9E4D3;
+ @bgColor: #FFF;
+ @textColor: #000;
+ @color1: #FFF7EC;
+ @color2: #8E9AB4;
  @trans: hsla(0, 100%, 100%, 0);
 
- @fontFamilyHeadings: @fontFamilySatisfy;
- @fontFamilyBody: @fontFamilySahitya;
+ @fontFamilyHeadings: @fontFamilyCinzel;
+ @fontFamilyBody: @fontFamilyMyriadPro;
 
 html {
     background-color: @bgColor;
     color: @textColor;
 }
 
-.flash-wrap {
-    background-color: @bgColor;
-    background: radial-gradient(@trans, @bgColor);
-}
-
-.flash-wrap img {
-    position: relative;;
-    z-index: -200;
-}
 
 .hiptext {
-    -webkit-column-count: 2; /* Chrome, Safari, Opera */
-    -moz-column-count: 2; /* Firefox */
-    column-count: 2;
-    column-gap: 50px;
-    column-width: 50%;
     margin: auto;
     text-align: center;
     padding: 30px;
@@ -48,16 +34,9 @@ html {
     margin: auto;
     clear: both;
     border: none;
-
 }
 
-.hipster:hover {
 
-}
-
-.hipster a:hover {
-
-}
 
 .row {
     text-align: center;
@@ -69,12 +48,53 @@ html {
     float: none;
 }
 
+.breadcrumb-wrap {
+    display: none;
+}
+
+article {
+    background-image: url("../img/textur.png");
+    box-shadow: 0px 6px 30px 0px rgba(0,0,0,0.75);
+}
+
+
 .article blockquote {
     width: 40%;
     font-style: italic;
     font-weight: bold;
     margin: auto;
+    background-color: @bgColor;
+    opacity: 0.5;
+    box-shadow: 0px 7px 30px 0px #000;
+    -webkit-transition: box-shadow 0.3s ease-in-out 0s;
+    -moz-transition: box-shadow 0.3s ease-in-out 0s;
+    -o-transition: box-shadow 0.3s ease-in-out 0s;
+    -ms-transition: box-shadow 0.3s ease-in-out 0s;
+    transition: box-shadow 0.3s ease-in-out 0s;
+}
+
+.article blockquote:hover {
+    -webkit-box-shadow: 0px 14px 59px 0px #000);
+    -moz-box-shadow: 0px 14px 59px 0px #000;
+    box-shadow: 0px 14px 59px 0px #000;
+}
+
+.hipster {
+    margin: auto;
+    clear: both;
     border: none;
+    box-shadow: 0px 14px 59px 0px #000;
+    -webkit-transition: box-shadow 0.3s ease-in-out 0s;
+    -moz-transition: box-shadow 0.3s ease-in-out 0s;
+    -o-transition: box-shadow 0.3s ease-in-out 0s;
+    -ms-transition: box-shadow 0.3s ease-in-out 0s;
+    transition: box-shadow 0.3s ease-in-out 0s;
+}
+
+.hipster:hover {
+    -webkit-box-shadow: 0px 42px 101px 0px #000;
+    -moz-box-shadow: 0px 42px 101px 0px #000;
+    box-shadow: 0px 42px 101px 0px #000;
 }
 
 
@@ -84,8 +104,13 @@ h3,
 h4,
 h5,
 h6, {
-    color: @textColor;
+    color: #282828;
     text-decoration: underline;
+}
+
+h1 {
+    color: #282828;
+    margin-top: none;
 }
 
  .site-header {
@@ -112,17 +137,21 @@ h6, {
      clear: both;
      margin: auto;
      padding-bottom: 5px;
-     font-size: 14px;
  }
 
  .profile {
  }
+
 
  .site-logo-text {
      font-size: 2em;
      width: 100%;
      margin: auto;
      padding: 5px;
+     animation-name: spin;
+     animation-duration: 4000ms;
+     animation-iteration-count: infinite;
+     animation-timing-function: linear;
     //  .column(3);
      a {
          text-decoration: none;
@@ -132,21 +161,39 @@ h6, {
      }
  }
 
-.footer-column-x {
-    float: none;
-}
-
+ .footer-column-x {
+     float: none;
+ }
  /** --------------------------------------------------------------
   * Navbar main
   */
 
+  @keyframes anim {
+      from {background-color: @bgColor;}
+      to {background-color: @color1;}
+  }
+  @keyframes anim2 {
+      from {background-color: @color1;}
+      to {background-color: @bgColor;}
+  }
+
 .rm-desktop li {
     text-align: center;
-    //background-color: #eee;
     border: 1px solid @color2;
-    a {
-        padding: 6px 10px;
-    }
+}
+
+.rm-desktop a {
+    padding: 3px 5px;
+    animation-name: anim;
+    animation-duration: 1s;
+    box-shadow: 0px 23px 25px -7px rgba(0,0,0,0.45);
+    transition: box-shadow 0.3s ease-in-out 0s;
+}
+
+.rm-desktop a:hover{
+    animation-name: anim2;
+    animation-duration: 1s;
+    box-shadow: 0px 23px 25px -7px rgba(0,0,0,0.61);
 }
 
 @navbarItemBgColor: @color1;

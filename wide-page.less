@@ -8,35 +8,101 @@
  * Header
  */
 
- @bgColor: #fff;
- @textColor: #000;
- @color1: #e0e2db;
- @color2: #5f6062;
+ @bgColor: #FFFEF6;
+ @textColor: #272622;
+ @color1: #FFFCEC;
+ @color2: #E9E4D3;
+ @trans: hsla(0, 100%, 100%, 0);
 
- @fontFamilyHeadings: @fontFamilyGaramond;
- @fontFamilyBody: @fontFamilyArial;
- @fontFamilyCode:
+ @fontFamilyHeadings: @fontFamilySatisfy;
+ @fontFamilyBody: @fontFamilySahitya;
 
 html {
     background-color: @bgColor;
     color: @textColor;
 }
 
-body {
+.flash-wrap {
+    background-color: @bgColor;
+    background: radial-gradient(@trans, @bgColor);
+}
+
+.flash-wrap img {
+    position: relative;;
+    z-index: -200;
+}
+
+.hiptext {
+    -webkit-column-count: 2; /* Chrome, Safari, Opera */
+    -moz-column-count: 2; /* Firefox */
+    column-count: 2;
+    column-gap: 50px;
+    column-width: 50%;
+    margin: auto;
+    text-align: center;
+    padding: 30px;
+    width: 80%;
+}
+
+.bild1 {
+    display: block;
+}
+
+.hipster {
+    margin: auto;
+    clear: both;
+    border: none;
 
 }
 
-h1,
+.hipster:hover {
+
+}
+
+.hipster a:hover {
+
+}
+
+.inner-wrap-main {
+    max-width: none;
+}
+
+article {
+    width: 100%;
+}
+
+.row {
+    text-align: center;
+    margin: auto;
+}
+
+.main {
+    margin: auto;
+    float: none;
+}
+
+.article blockquote {
+    width: 40%;
+    font-style: italic;
+    font-weight: bold;
+    margin: auto;
+    border: none;
+}
+
+
+//h1,
 h2,
 h3,
 h4,
 h5,
 h6, {
-    color: @color2;
+    color: @textColor;
+    text-decoration: underline;
 }
 
  .site-header {
      height: 80px;
+     width: 100%;
  }
 
 .myByline {
@@ -54,8 +120,11 @@ h6, {
      .column(3);
  }
 
-.navbar2,{
-     .column(7);
+.navbar2 {
+     clear: both;
+     margin: auto;
+     padding-bottom: 5px;
+     font-size: 14px;
  }
 
  .profile {
@@ -63,13 +132,21 @@ h6, {
 
  .site-logo-text {
      font-size: 2em;
+     width: 100%;
+     margin: auto;
+     padding: 5px;
     //  .column(3);
      a {
          text-decoration: none;
-         color: #222;
+         color: @textColor;
+         clear: both;
+         font-size: 0px;
      }
  }
 
+ .footer-column-x {
+     float: none;
+ }
 
  /** --------------------------------------------------------------
   * Navbar main
@@ -78,6 +155,7 @@ h6, {
 .rm-desktop li {
     text-align: center;
     //background-color: #eee;
+    border: 1px solid @color2;
 }
 
 @navbarItemBgColor: @color1;
@@ -162,5 +240,22 @@ h6, {
 
    .footer-column {
        width: 100%;
+   }
+}
+
+@media screen and (max-width: 400px) {
+
+   .hiptext {
+       -webkit-column-count: 1; /* Chrome, Safari, Opera */
+       -moz-column-count: 1; /* Firefox */
+       column-count: 1;
+       column-width: 100%;
+   }
+
+   .footer {
+       -webkit-column-count: 1; /* Chrome, Safari, Opera */
+       -moz-column-count: 1; /* Firefox */
+       column-count: 1;
+       column-width: 100%;
    }
 }
